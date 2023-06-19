@@ -1,0 +1,24 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	position: relative;
+	padding: rem(11) rem(31);
+  font-weight: 500;
+  line-height: math.div(28, 18); /* 28/18 */
+  color: $indigo;
+  border: 1px solid $indigo;
+  border-radius: 6px;
+	transition: all 0.3s ease 0s;
+	z-index: 2;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $indigo;
+			color: $white;
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}
