@@ -18,6 +18,19 @@
 			color: $white;
 		}
 	}
+
+	&--bg {
+		color: $white;
+		background-color: $indigo;
+
+		@media (any-hover: hover) {
+		&:hover {
+			background-color: $white;
+			color: $indigo;
+		}
+	}
+	}
+
 	&._fw {
 		width: 100%;
 	}

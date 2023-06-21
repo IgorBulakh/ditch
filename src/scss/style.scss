@@ -29,7 +29,9 @@ $white: #FFFFFF;
 $logo-color: #EEEBFF;
 $indigo: #3730A3;
 $gray100: #EEF2FF;
+$gray200: #9CA3AF;
 $gray500: #1F2937;
+$ivory: #FEF2F2;
 
 // Палітра кольорів
 // @import "base/colors-palette";
@@ -158,3 +160,10 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+
+
+.page {
+
+		&__section {
+		}
+}

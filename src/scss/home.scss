@@ -5,3 +5,282 @@
 }
 
 //====================================================================================================
+
+
+.main-page {
+  @include adaptiveValue("padding-top", 340, 110);
+  @include adaptiveValue("padding-bottom", 100, 40);
+  
+  &__container {
+
+    @media (min-width: em(768)) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  &__content {
+    // align-self: center;
+    flex: 1 1 auto;
+    
+    @media (min-width: em(768)) {
+        @include adaptiveValue("margin-right", 100, 20);
+      }
+
+      @media (max-width: $mobile) {
+        &:not(:last-child) {
+          margin-bottom: rem(20);
+        }
+      }
+		}
+
+		&__picture {
+      // align-self: end;
+      flex: 0 0 40.508475%; /* 478/1180 */
+
+      & img {
+        max-width: 100%;
+      }
+		}
+}
+.content-main {
+    display: grid;
+    @include adaptiveValue("gap", 40, 20);
+
+		&__name {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+      font-size: rem(20);
+      font-weight: 500;
+      text-transform: capitalize;
+      line-height: 1.4; /* 28/20 */
+      color: $indigo;
+
+      &::before {
+        content: "";
+        flex: 0 0 rem(102);
+        height: rem(2);
+        background-color: $indigo;
+      }
+
+      @media (max-width: $mobile) {
+        justify-content: center;
+        
+        &::before {
+          flex: 0 0 rem(30);
+        }
+
+        &::after {
+          content: "";
+          flex: 0 0 rem(30);
+          height: rem(2);
+          background-color: $indigo;
+        }
+      }
+		}
+
+		&__title {
+      @include adaptiveValue("font-size", 72, 32);
+      font-weight: 700;
+      text-align: start;
+		}
+
+		&__box-text {
+      @include adaptiveValue("font-size", 18, 20);
+      line-height: 1.4; /* 28/20 */
+		}
+
+		&__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(20);
+		}
+
+    &__button {
+      text-align: center;
+
+      @media (max-width: $mobile) {
+        flex: 1 1 auto;
+      }
+    }
+
+		&__requisition {
+      padding-top: rem(20);
+      font-size: rem(12);
+      line-height: 1.3; /* 16/12 */
+      border-top: 1px solid rgba($mainColor, 0.7);
+		}
+}
+
+
+// projects=========================
+
+
+.projects {
+  @include adaptiveValue("padding-top", 100, 40);
+  @include adaptiveValue("padding-bottom", 100, 40);
+
+		&__container {
+		}
+
+		&__title {
+      margin: 0 auto;
+      max-width: rem(1040);
+      @include adaptiveValue("font-size", 48, 32);
+
+      & span {
+        color: $indigo;
+      }
+
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 150, 50);
+        
+      }
+		}
+
+		&__block {
+		}
+}
+
+.block-projects {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $mobile) {
+    flex-direction: column-reverse;
+    }
+
+		&__picture {
+      flex: 0 0 37.288136%; /* 440/1180 */
+
+      & img {
+        max-width: 100%;
+      }
+		}
+
+		&__lists {
+      flex: 1 1 auto;
+      @include adaptiveValue("padding", 50, 20);
+      
+      @media (min-width: em(425)) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include adaptiveValue("grid-gap", 68, 20);
+
+      }
+		}
+
+		&__list {
+		}
+
+		&__cart {
+		}
+}
+.cart-project {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  @include adaptiveValue("gap", 20, 10);
+  font-size: rem(12);
+  line-height: 1.33;
+
+		&__title {
+      // @include adaptiveValue("line-height", 1.56, 1);
+      line-height: 1.56;
+      font-weight: 600;
+      color: $gray500;
+		}
+
+		&__text {
+      flex-grow: 1;
+		}
+
+		&__link {
+      display: inline-flex;
+      align-items: center;
+      gap: rem(5);
+      color: $indigo;
+      text-transform: capitalize;
+      font-weight: 500;
+
+      &::after {
+        content: "";
+        background: url(../img/icon/arrow.svg) 0 0/ 100% no-repeat;
+        flex: 0 0 rem(12);
+        width: rem(12);
+        height: rem(12);
+
+      }
+		}
+}
+
+// brands======================================
+
+
+.brands {
+  @include adaptiveValue("padding-top", 100, 30);
+  @include adaptiveValue("padding-bottom", 100, 30);
+  background-color: $ivory;
+		&__container {
+		}
+
+		&__title {
+      font-size: rem(20);
+      line-height: 1.4;
+      color: $gray200;
+      margin-bottom: rem(20);
+		}
+
+		&__items {
+      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+      grid-gap: rem(25);
+		}
+
+		&__item {
+      & img {
+        max-width: 100%;
+      }
+		}
+}
+
+
+// gallery=====================================
+
+.gallery {
+
+		&__container {
+		}
+
+		&__title {
+		}
+
+		&__items {
+		}
+
+		&__item {
+		}
+
+		&__link {
+		}
+}
+
+.link-gallery {
+
+		&__picture-bg {
+		}
+
+		&__body {
+		}
+}
+.sublink {
+
+		&__title {
+		}
+
+		&__profeshion {
+		}
+}
+

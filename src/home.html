@@ -8,11 +8,164 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<div class="page__container">
-			</div>
+			<section class="page__section main-page">
+				<div class="main-page__container">
+					<div class="main-page__content content-main">
+						<div class="content-main__name">jessica strosin</div>
+						<h1 class="content-main__title title">Creative thinker Minimalism lover</h1>
+						<div class="content-main__box-text">
+							<p>
+								Hi, I’m Jessica. I’m UI/UX Designer. If you are looking for Designer to build your brands and grow your
+								business Let’s
+								shake hands with me.
+							</p>
+						</div>
+						<div class="content-main__buttons">
+							<button data-popup="#popup" class="content-main__button button button--bg">Hire me</button>
+							<a class="content-main__button button" href="#">Read more</a>
+						</div>
+						<div class="content-main__requisition">I am currently open for part-time work.</div>
+					</div>
+					<div class="main-page__picture">
+						<img src="img/content/woman.jpg" alt="portrait woman">
+					</div>
+				</div>
+			</section>
+			<section class="page__section projects">
+				<div class="projects__container">
+					<h2 class="projects__title title">From beginning ideas to individual integrity, rich identity from the line
+						<span>on the paper to final projects</span></h2>
+					<div class="projects__block block-projects">
+						<div class="block-projects__picture">
+							<img src="img/content/two-people.jpg" alt="two-people">
+						</div>
+						<ul class="block-projects__lists">
+							<li class="block-projects__list">
+								<article class="block-projects__cart cart-project">
+									<h3 class="cart-project__title">Web design</h3>
+									<div class="cart-project__text">
+										<p>
+											Provide our customers with optimized user-friendly experience to increase the efficiency of
+											digital
+											products.
+										</p>
+									</div>
+									<a class="cart-project__link">see works</a>
+								</article>
+							</li>
+							<li class="block-projects__list">
+								<article class="block-projects__cart cart-project">
+									<h3 class="cart-project__title">Mobile design</h3>
+									<div class="cart-project__text">
+										<p>
+											Mobile application development is a highlight that businesses are interested in at the moment and
+											in the
+											future.
+										</p>
+									</div>
+									<a class="cart-project__link">see works</a>
+								</article>
+							</li>
+							<li class="block-projects__list">
+								<article class="block-projects__cart cart-project">
+									<h3 class="cart-project__title">Branding</h3>
+									<div class="cart-project__text">
+										<p>
+											Understanding the business and their target customers, I’m the bridges to bring the brand closer
+											to their
+											clients.
+										</p>
+									</div>
+									<a class="cart-project__link">see works</a>
+								</article>
+							</li>
+							<li class="block-projects__list">
+								<article class="block-projects__cart cart-project">
+									<h3 class="cart-project__title">3D Modeling</h3>
+									<div class="cart-project__text">
+										<p>
+											Help you translate your existing design or concept into CAD or to work with you to develop the
+											ideal design.
+											3D Models great for modern digital art
+										</p>
+									</div>
+									<a class="cart-project__link">see works</a>
+								</article>
+							</li>
+							<li class="block-projects__list">
+								<article class="block-projects__cart cart-project">
+									<h3 class="cart-project__title">Photography</h3>
+									<div class="cart-project__text">
+										<p>
+											While stock photography is a great option for sourcing high-quality photos, it’s important that
+											you choose
+											your photos thoughtfully.
+										</p>
+									</div>
+									<a class="cart-project__link">see works</a>
+								</article>
+							</li>
+							<li class="block-projects__list">
+								<article class="block-projects__cart cart-project">
+									<h3 class="cart-project__title">Video creating</h3>
+									<div class="cart-project__text">
+										<p>
+											Create high-impact social videos with our easy video maker. Use custom video templates to find the
+											right
+											story for your business.
+										</p>
+									</div>
+									<a class="cart-project__link">see works</a>
+								</article>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="page__section brands">
+				<div class="brands__container">
+					<h3 class="brands__title">Trusted by</h3>
+					<ul class="brands__items">
+						<li class="brands__item">
+							<img src="img/content/alphabet.png" alt="logo">
+						</li>
+						<li class="brands__item">
+							<img src="img/content/shopify-original.png" alt="logo">
+						</li>
+						<li class="brands__item">
+							<img src="img/content/amazon.png" alt="logo">
+						</li>
+						<li class="brands__item">
+							<img src="img/content/google-original.png" alt="logo">
+						</li>
+						<li class="brands__item">
+							<img src="img/content/netflix-primary.png" alt="logo">
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="page__section gallery">
+				<div class="gallery__container">
+					<h2 class="gallery__title title">It’s great to always give the customer the best feed.</h2>
+					<ul class="gallery__items">
+						<li class="gallery__item">
+							<a class="gallery__link link-gallery" href="#">
+								<div class="link-gallery__picture-ibg">
+									<img src="img/content/car.jpg" alt="car">
+								</div>
+								<div class="link-gallery__body">
+									<h3 class="sublink__title">Project title here</h3>
+									<div class="sublink__profeshion">Photograph</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
+	@@include('html/_popup.htm',{})
 	@@include('html/_js.htm',{})
 </body>
 

@@ -1,14 +1,27 @@
 //====================================================================================================
 .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	transition: all 0.3s ease 0s;
+
+	&._header-scroll {
+		background-color: rgba($white, 0.8);
+	}
 
 		&__container {
 			display: flex;
 			align-items: center;
 			gap: rem(10);
 			@include adaptiveValue("min-height", 236, 80);
+			transition: all 0.3s ease 0s; 
 
-			
-			outline: 2px solid rgb(132, 210, 16);
+			._header-scroll & {
+				min-height: rem(80);
+		}
+
 			@media (max-width: $mobile) {
 				gap: rem(30);
 			}
@@ -31,9 +44,6 @@
 			transform: rotate(30deg);
 			z-index: 2;
 		}
-
-		&__nav {
-		}
 }
 
 .navigation {
@@ -43,25 +53,50 @@
 	justify-content: flex-end;
 	@include adaptiveValue("gap", 80, 20);
 
-	outline: 2px solid rgb(16, 168, 210);
-
 		&__lists {
 			display: flex;
 			padding: 0 0 0 rem(5);
-
-			outline: 2px solid rgb(81, 210, 16);
 
 			@media (max-width: $mobile) {
 				position: fixed;
 				flex-direction: column;
 				align-items: center;
 				gap: rem(20);
-				padding: rem(130) rem(15) rem(30);
+				@include adaptiveValue("padding-top", 280, 120);
+				padding: 0 rem(15) rem(30);
 				width: 100%;
 				height: 100%;
-				left: 0;
+				left: -100%;
 				top: 0;
 				background-color: $gray500;
+				overflow: auto;
+				transition: left 0.3s ease 0s;
+
+				._header-scroll & {
+					padding-top: rem(120);
+				}
+				
+				&::before {
+					content: "";
+					position: fixed;
+					width: 100%;
+					top: 0;
+					left: -100%;
+					@include adaptiveValue("min-height", 236, 80);
+					background-color: $gray100;
+					transition: left 0.3s ease 0s;
+
+					._header-scroll & {
+						min-height: rem(80);
+					}
+				}
+
+				.menu-open & {
+					left: 0;
+					&::before {
+						left: 0;
+					}
+				}
 			}
 		}
 
@@ -76,16 +111,33 @@
 		}
 
 		&__link {
+			position: relative;
+			font-weight: 500;
+			line-height: 1.56;
+
+			&::before {
+				position: absolute;
+				content: "";
+				width: 0;
+				height: 2px;
+				bottom: rem(-4);
+				left: 50%;
+				border-radius: 2px;
+				background-color: $mainColor;
+        transition: width 0.3s, left 0.3s;
+			}
 
 			@media (max-width: $mobile) {
 				font-size: rem(30);
 			}
-		}
 
-		&__button {
-		}
-
-		&__icon {
+			@media (any-hover: hover) {
+				&:hover::before{
+					width: 100%;
+					left: 0;
+				}
+			}
+			
 		}
 }
 
