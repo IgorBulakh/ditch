@@ -1,15 +1,15 @@
 //====================================================================================================
 
-[class*="__container"] {
-  outline: 2px solid rgb(210, 16, 136);
-}
+// [class*="__container"] {
+//   outline: 2px solid rgb(210, 16, 136);
+// }
 
 //====================================================================================================
 
 
 .main-page {
   @include adaptiveValue("padding-top", 340, 110);
-  @include adaptiveValue("padding-bottom", 100, 40);
+  @include adaptiveValue("padding-bottom", 75, 30);
   
   &__container {
 
@@ -118,8 +118,8 @@
 
 
 .projects {
-  @include adaptiveValue("padding-top", 100, 40);
-  @include adaptiveValue("padding-bottom", 100, 40);
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
 
 		&__container {
 		}
@@ -250,37 +250,233 @@
 // gallery=====================================
 
 .gallery {
+    @include adaptiveValue("padding-top", 75, 30);
+    @include adaptiveValue("padding-bottom", 75, 30);
 
 		&__container {
 		}
 
 		&__title {
+      max-width: rem(1040);
+      margin: 0 auto;
+
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 150, 40);
+      }
 		}
 
 		&__items {
+      display: grid;
+      grid-gap: rem(30);
+      
+      @media (min-width: $mobile) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 		}
 
 		&__item {
 		}
+
+    &__item--row-2 {
+      grid-row: span 2;
+      
+    }
+
+    &__item--colum-2 {
+
+      @media (min-width: $mobile) {
+        grid-column: span 2;
+
+        & .link-gallery__picture-ibg {
+          padding-bottom: 33.898305%; /* 400/1180 */
+        }
+      }
+
+    }
 
 		&__link {
 		}
 }
 
 .link-gallery {
+  position: relative;
 
-		&__picture-bg {
+  @media (any-hover: hover) {
+			&:hover {
+        .link-gallery__wrap {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+		}
+  
+  &__picture-ibg {
+    padding-bottom: 74.83871%; /* 464/620 */
+    height: 100%;
+
+    & img {
+      
+    }
+  }
+
+  &__wrap {
+    position: absolute;
+    @include adaptiveValue("padding", 20, 10);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease 0s;
+
+    .touch & {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  &__body {
+    position: relative;
+    padding: rem(23) rem(57) rem(23) rem(27);
+    background-color: $white;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: rem(30);
+      height: rem(30);
+      background: url(../img/icon/arrow-black.svg) 0 0/ 100% no-repeat;
+      top: 50%;
+      right: rem(25);
+      transform: translate(0, -50%);
+    }
+	}
+
+	&__title {
+    line-height: 1.55;
+    font-weight: 500;
+    color: $gray500;
+	}
+
+	&__profession {
+    font-family: rem(14);
+    line-height: 1.4;
+    font-weight: 500;
+	}
+}
+
+
+// planning==================================
+
+.planning {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+
+		&__container {
 		}
 
-		&__body {
+		&__items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+      @include adaptiveValue("grid-gap", 80, 30);
+		}
+
+		&__item {
+      text-align: center;
+		}
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: rem(140);
+      height: rem(140);
+      background-color: $gray100;
+      border-radius: rem(6);
+
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 40, 20);
+      }
+    }
+
+		&__title {
+      font-size: rem(30);
+      font-weight: 600;
+      line-height: 1.2;
+      color: $gray500;
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+		}
+
+		&__text {
+      padding-left: rem(10);
+      padding-right: rem(10);
+      line-height: 1.55;
 		}
 }
-.sublink {
+
+// careers===================================
+
+.careers {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+		&__container {
+		}
 
 		&__title {
 		}
 
-		&__profeshion {
+		&__table {
 		}
 }
+
+.table {
+  text-align: left;
+
+  @media (max-width: $mobile) {
+    overflow: auto;
+  }
+
+		&__items {
+      width: 100%;
+      min-width: rem(750);
+      border-collapse: collapse;
+		}
+
+		&__row {
+      &:not(:last-child) {
+        .table__title,
+        .table__cell {
+          @include adaptiveValue("padding-bottom", 80, 30);
+        }
+      }
+		}
+
+		&__title {
+      font-size: rem(16);
+      font-weight: 500;
+      line-height: 1.5;
+      text-transform: uppercase;
+
+      &:not(:last-child) {
+        padding: rem(15);
+      }
+		}
+    
+    &__cell {
+      line-height: 1.5;
+
+      &:not(:last-child) {
+        padding-right: rem(15);
+      }
+      & span {
+        font-weight: 600;
+        color: $gray500;
+      }
+    }
+}
+
 

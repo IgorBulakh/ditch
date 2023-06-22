@@ -1,3 +1,42 @@
 //====================================================================================================
+.footer {
+  @include adaptiveValue("padding-top", 110, 40);
+  @include adaptiveValue("padding-bottom", 110, 40);
+  background-color: $ivory;
+
+		&__container {
+      text-align: center;
+    }
+    
+		&__title {
+      margin-bottom: rem(20);
+    }
+    
+		&__text {
+      max-width: rem(670);
+      margin: 0 auto;
+      line-height: 1.55;
+
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 100, 50);
+      }
+
+		}
+
+		&__items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include adaptiveValue("gap", 50, 15);
+		}
+    
+		&__item {
+      flex: 0 0 rem(35);
+		}
+
+		&__social {
+		}
+}
+
 
 //====================================================================================================
