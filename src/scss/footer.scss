@@ -18,7 +18,7 @@
       line-height: 1.55;
 
       &:not(:last-child) {
-        @include adaptiveValue("margin-bottom", 100, 50);
+        @include adaptiveValue("margin-bottom", 100, 30);
       }
 
 		}
@@ -29,7 +29,7 @@
       flex-wrap: wrap;
       @include adaptiveValue("gap", 50, 15);
 		}
-    
+
 		&__item {
       flex: 0 0 rem(35);
 		}
